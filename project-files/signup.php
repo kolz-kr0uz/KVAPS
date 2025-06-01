@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KVAPS|LOGIN</title>
+  <title>KVAPS|SIGN UP</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -21,12 +21,14 @@
       font-weight: 900;
       font-size: 86px;
       letter-spacing: 1px;
+      
     }
     .form-subtitle {
       margin-top: -30px;
       font-weight: 400;
       font-size: 32px;
       margin-bottom: 2rem;
+      opacity: 0.85;
       text-transform: lowercase;
     }
     .btn-toggle-group {
@@ -56,6 +58,10 @@
       border-top-right-radius: 30px;
       border-bottom-right-radius: 30px;
     }
+    .btn-login-inactive {
+      background-color: white;
+      color: black;
+    }
     .btn-login-active {
       background-color: #00cfff;
       color: black;
@@ -65,15 +71,22 @@
       margin-bottom: 1rem;
       height: 2.75rem;
       font-size: 1rem;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      padding-left: 0.75rem;
+    }
+    .form-control::placeholder {
+      color: #999;
     }
     .btn-submit {
-      color: white;
       background-color: #7c00ff;
       border: none;
       font-weight: 600;
       height: 2.75rem;
       font-size: 1rem;
       transition: background-color 0.3s ease;
+      color: white;
     }
     .btn-submit:hover {
       background-color: #5a00cc;
@@ -82,24 +95,26 @@
 </head>
 <body>
   <div class="d-flex justify-content-center align-items-center vh-100">
-    <form class="form-container text-center">
+    <form class="form-container text-center" autocomplete="off" action="signupphp.php" method="POST">
       <div class="form-title">KVAPS</div>
       <div class="form-subtitle">meme always</div>
 
       <div class="btn-toggle-group mb-4" role="group" aria-label="Login or Sign up">
-        <button type="button" class="btn-login-active" id="loginTab">login</button>
-        <button type="button" class="btn-login-inactive" id="signUpTab">Sign up</button>
+        <button type="button" class="btn-login-inactive" id="loginTab">login</button>
+        <button type="button" class="btn-login-active" id="signUpTab">Sign up</button>
       </div>
 
-      <input type="email" class="form-control" placeholder="Email" required />
-      <input type="password" class="form-control" placeholder="Password" required />
-      <button type="submit" class="btn btn-submit w-100">login</button>
+      <input name="email" type="email" class="form-control" placeholder="Email" required />
+      <input name="login" type="text" class="form-control" placeholder="login" required />
+      <input name="pass" type="password" class="form-control" placeholder="Password" required />
+      <input type="password" class="form-control" placeholder="Confirm password" required />
+      <button type="submit" class="btn btn-submit w-100">Sign up</button>
     </form>
   </div>
   <script>
-    document.getElementById('signUpTab').addEventListener('click', () => {
-    window.location.href = 'signup.html';
-  });
+    document.getElementById('loginTab').addEventListener('click', () => {
+    window.location.href = 'login.php';
+    });
   </script>
 </body>
 </html>
