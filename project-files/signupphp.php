@@ -27,7 +27,8 @@ if ($stmt->num_rows > 0) {
     
     if ($stmt->execute()) {
         $_SESSION['msg'] = 'Успешная регистрация';
-        header('location: login.php');
+        $_SESSION['user'] = $login;
+        header('location: index_author.php');
         exit;
     } else {
         $_SESSION['msg'] = "Ошибка: " . $conn->error;

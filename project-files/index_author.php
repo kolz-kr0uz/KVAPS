@@ -1,3 +1,7 @@
+<?php
+session_start();
+$login = $_SESSION['user']; 
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,8 +40,8 @@
       </div>
       <div class="upload">
       <a id="up_load" class="btn btn-secondary btn-sm " href="#" role="button">upload</a>
-      <a class="btn btn-secondary btn-sm" href="#" role="button">user_name</a>
-      <a href="#"><img src="img/logout.png" alt="logout"></a>
+      <a class="btn btn-secondary btn-sm" href="#" role="button"><? echo $_SESSION['user']; ?></a>
+      <a href="logout.php"><img src="img/logout.png" alt="logout"></a>
       <!--
         <a href="#" class="btn btn-secondary btn-md">
           <span class="d-inline-flex align-items-center">

@@ -22,7 +22,7 @@ else {
                 $_SESSION['admin'] = TRUE;
                 header('Location: admin.php');
             } else {
-                header('Location: index.html');
+                header('location: index_author.php');
             }
         }
     } else {
